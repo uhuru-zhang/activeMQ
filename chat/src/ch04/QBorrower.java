@@ -23,7 +23,7 @@ public class QBorrower {
 
     public QBorrower(String queuecf, String requsetQueue, String responseQueue){
         try {
-            QueueConnectionFactory factory = new ActiveMQConnectionFactory();
+            QueueConnectionFactory factory = new ActiveMQConnectionFactory("tcp://localhost:61616");
             QueueConnection connection = factory.createQueueConnection();
 
             queueSession = connection.createQueueSession(false, Session.AUTO_ACKNOWLEDGE);

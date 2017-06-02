@@ -20,7 +20,7 @@ public class QLender implements MessageListener{
 
     public QLender(String queuecf, String requestQueue){
         try {
-            QueueConnectionFactory factory = new ActiveMQConnectionFactory(queuecf);
+            QueueConnectionFactory factory = new ActiveMQConnectionFactory("tcp://localhost:61616");
             connection = factory.createQueueConnection();
 
             session = connection.createQueueSession(false, Session.AUTO_ACKNOWLEDGE);
